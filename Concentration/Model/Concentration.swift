@@ -12,18 +12,7 @@ struct Concentration {
     private(set) var cards = [Card]()
     private var indexOfOneAndOnlyFaceupCard: Int? {
         get {
-            var foundIndex: Int?
-            for index in cards.indices {
-                if cards[index].isFaceUp {
-                    if foundIndex == nil {
-                        foundIndex = index
-                    }
-                    else {
-                        return nil
-                    }
-                }
-            }
-            return foundIndex
+            return cards.indices.filter({ cards[$0].isFaceUp }).oneAndOnly // the use of filter, closures and extensions.
         }
         set {
             for index in cards.indices {
@@ -49,7 +38,6 @@ struct Concentration {
                 }
                 cards[index].isFlippedBefore = true
                 cards[matchIndex].isFlippedBefore = true
-                //indexOfOneAndOnlyFaceupCard = nil                         Stupid Error -> only one card get shown from the 2 cards I pick !!!
             }
             else {
                 flipsCount += 1
@@ -67,8 +55,14 @@ struct Concentration {
         var cardsTemp = cards
         cards = []
         for _ in cardsTemp { //shuffling the cards
-            //let randomIndex = Int(arc4random_uniform(UInt32(cardsTemp.count)))
             cards.append(cardsTemp.remove(at: cardsTemp.count.arc4random))
         }
+    }
+}
+
+
+extension Collection {
+    var oneAndOnly: Element? {
+        return count == 1 ? first : nil
     }
 }

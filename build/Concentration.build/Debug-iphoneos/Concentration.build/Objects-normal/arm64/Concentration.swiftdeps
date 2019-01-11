@@ -5,6 +5,8 @@ provides-nominal:
 - "13ConcentrationAAV"
 provides-member:
 - ["13ConcentrationAAV", ""]
+- ["Sl", ""]
+- ["Sl", "oneAndOnly"]
 provides-dynamic-lookup:
 depends-top-level:
 - !private "!"
@@ -17,19 +19,21 @@ depends-top-level:
 - !private "Array"
 - "AssignmentPrecedence"
 - "Card"
+- "Collection"
 - "Concentration"
 - "FloatLiteralType"
 - "Int"
 - "IntegerLiteralType"
 - !private "StringLiteralType"
+- "TernaryPrecedence"
 - !private "assert"
-- !private "print"
 - !private "||"
 depends-member:
 - !private ["Sa", "append"]
 - !private ["Sa", "count"]
 - !private ["Sa", "indices"]
 - ["Sa", "init"]
+- !private ["Sa", "oneAndOnly"]
 - !private ["Sa", "remove"]
 - !private ["Sa", "subscript"]
 - !private ["s13ArrayProtocolP", "append"]
@@ -40,6 +44,7 @@ depends-member:
 - !private ["s13ArrayProtocolP", "isFaceUp"]
 - !private ["s13ArrayProtocolP", "isFlippedBefore"]
 - !private ["s13ArrayProtocolP", "isMatched"]
+- !private ["s13ArrayProtocolP", "oneAndOnly"]
 - !private ["s13ArrayProtocolP", "remove"]
 - !private ["s13ArrayProtocolP", "subscript"]
 - !private ["s10ArraySliceV", "identifier"]
@@ -49,6 +54,7 @@ depends-member:
 - !private ["SK", "append"]
 - !private ["SK", "contains"]
 - !private ["SK", "count"]
+- !private ["SK", "filter"]
 - !private ["SK", "identifier"]
 - !private ["SK", "indices"]
 - ["SK", "init"]
@@ -56,6 +62,7 @@ depends-member:
 - !private ["SK", "isFaceUp"]
 - !private ["SK", "isFlippedBefore"]
 - !private ["SK", "isMatched"]
+- !private ["SK", "oneAndOnly"]
 - !private ["SK", "remove"]
 - !private ["SK", "subscript"]
 - !private ["Sz", "arc4random"]
@@ -67,6 +74,7 @@ depends-member:
 - !private ["s7CVarArgP", "indices"]
 - ["s7CVarArgP", "init"]
 - !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "oneAndOnly"]
 - !private ["s7CVarArgP", "remove"]
 - !private ["s7CVarArgP", "subscript"]
 - !private ["13Concentration4CardV", "identifier"]
@@ -74,9 +82,12 @@ depends-member:
 - !private ["13Concentration4CardV", "isFaceUp"]
 - !private ["13Concentration4CardV", "isFlippedBefore"]
 - !private ["13Concentration4CardV", "isMatched"]
+- ["Sl", "Element"]
 - !private ["Sl", "append"]
 - !private ["Sl", "contains"]
 - !private ["Sl", "count"]
+- !private ["Sl", "filter"]
+- !private ["Sl", "first"]
 - !private ["Sl", "identifier"]
 - !private ["Sl", "indices"]
 - ["Sl", "init"]
@@ -84,6 +95,7 @@ depends-member:
 - !private ["Sl", "isFaceUp"]
 - !private ["Sl", "isFlippedBefore"]
 - !private ["Sl", "isMatched"]
+- ["Sl", "oneAndOnly"]
 - !private ["Sl", "remove"]
 - !private ["Sl", "subscript"]
 - !private ["SL", "arc4random"]
@@ -97,11 +109,11 @@ depends-member:
 - ["13ConcentrationAAV", "flipsCount"]
 - !private ["13ConcentrationAAV", "indexOfOneAndOnlyFaceupCard"]
 - ["13ConcentrationAAV", "init"]
-- !private ["13ConcentrationAAV", "print"]
 - ["13ConcentrationAAV", "score"]
 - !private ["s28CustomDebugStringConvertibleP", "append"]
 - !private ["s28CustomDebugStringConvertibleP", "contains"]
 - !private ["s28CustomDebugStringConvertibleP", "count"]
+- !private ["s28CustomDebugStringConvertibleP", "filter"]
 - !private ["s28CustomDebugStringConvertibleP", "identifier"]
 - !private ["s28CustomDebugStringConvertibleP", "indices"]
 - ["s28CustomDebugStringConvertibleP", "init"]
@@ -109,6 +121,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "isFaceUp"]
 - !private ["s28CustomDebugStringConvertibleP", "isFlippedBefore"]
 - !private ["s28CustomDebugStringConvertibleP", "isMatched"]
+- !private ["s28CustomDebugStringConvertibleP", "oneAndOnly"]
 - !private ["s28CustomDebugStringConvertibleP", "remove"]
 - !private ["s28CustomDebugStringConvertibleP", "subscript"]
 - !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
@@ -120,6 +133,7 @@ depends-member:
 - !private ["s17CustomReflectableP", "arc4random"]
 - !private ["s17CustomReflectableP", "contains"]
 - !private ["s17CustomReflectableP", "count"]
+- !private ["s17CustomReflectableP", "filter"]
 - !private ["s17CustomReflectableP", "identifier"]
 - !private ["s17CustomReflectableP", "indices"]
 - ["s17CustomReflectableP", "init"]
@@ -127,6 +141,7 @@ depends-member:
 - !private ["s17CustomReflectableP", "isFaceUp"]
 - !private ["s17CustomReflectableP", "isFlippedBefore"]
 - !private ["s17CustomReflectableP", "isMatched"]
+- !private ["s17CustomReflectableP", "oneAndOnly"]
 - !private ["s17CustomReflectableP", "remove"]
 - !private ["s17CustomReflectableP", "subscript"]
 - !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
@@ -134,6 +149,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "arc4random"]
 - !private ["s23CustomStringConvertibleP", "contains"]
 - !private ["s23CustomStringConvertibleP", "count"]
+- !private ["s23CustomStringConvertibleP", "filter"]
 - !private ["s23CustomStringConvertibleP", "identifier"]
 - !private ["s23CustomStringConvertibleP", "indices"]
 - ["s23CustomStringConvertibleP", "init"]
@@ -141,6 +157,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "isFaceUp"]
 - !private ["s23CustomStringConvertibleP", "isFlippedBefore"]
 - !private ["s23CustomStringConvertibleP", "isMatched"]
+- !private ["s23CustomStringConvertibleP", "oneAndOnly"]
 - !private ["s23CustomStringConvertibleP", "remove"]
 - !private ["s23CustomStringConvertibleP", "subscript"]
 - !private ["Se", "_getBuiltinLogicValue"]
@@ -150,6 +167,7 @@ depends-member:
 - !private ["Se", "indices"]
 - ["Se", "init"]
 - !private ["Se", "init"]
+- !private ["Se", "oneAndOnly"]
 - !private ["Se", "remove"]
 - !private ["Se", "subscript"]
 - !private ["SE", "_getBuiltinLogicValue"]
@@ -159,6 +177,7 @@ depends-member:
 - !private ["SE", "indices"]
 - ["SE", "init"]
 - !private ["SE", "init"]
+- !private ["SE", "oneAndOnly"]
 - !private ["SE", "remove"]
 - !private ["SE", "subscript"]
 - !private ["SQ", "_getBuiltinLogicValue"]
@@ -166,6 +185,7 @@ depends-member:
 - !private ["SQ", "arc4random"]
 - !private ["SQ", "contains"]
 - !private ["SQ", "count"]
+- !private ["SQ", "filter"]
 - !private ["SQ", "identifier"]
 - !private ["SQ", "indices"]
 - ["SQ", "init"]
@@ -173,6 +193,7 @@ depends-member:
 - !private ["SQ", "isFaceUp"]
 - !private ["SQ", "isFlippedBefore"]
 - !private ["SQ", "isMatched"]
+- !private ["SQ", "oneAndOnly"]
 - !private ["SQ", "remove"]
 - !private ["SQ", "subscript"]
 - !private ["s25ExpressibleByArrayLiteralP", "append"]
@@ -183,6 +204,7 @@ depends-member:
 - !private ["s25ExpressibleByArrayLiteralP", "isFaceUp"]
 - !private ["s25ExpressibleByArrayLiteralP", "isFlippedBefore"]
 - !private ["s25ExpressibleByArrayLiteralP", "isMatched"]
+- !private ["s25ExpressibleByArrayLiteralP", "oneAndOnly"]
 - !private ["s25ExpressibleByArrayLiteralP", "remove"]
 - !private ["s25ExpressibleByArrayLiteralP", "subscript"]
 - !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
@@ -199,6 +221,7 @@ depends-member:
 - !private ["SH", "arc4random"]
 - !private ["SH", "contains"]
 - !private ["SH", "count"]
+- !private ["SH", "filter"]
 - !private ["SH", "identifier"]
 - !private ["SH", "indices"]
 - ["SH", "init"]
@@ -206,9 +229,12 @@ depends-member:
 - !private ["SH", "isFaceUp"]
 - !private ["SH", "isFlippedBefore"]
 - !private ["SH", "isMatched"]
+- !private ["SH", "oneAndOnly"]
 - !private ["SH", "remove"]
 - !private ["SH", "subscript"]
 - !private ["Si", "arc4random"]
+- !private ["s22LazyCollectionProtocolP", "isFaceUp"]
+- !private ["s20LazySequenceProtocolP", "isFaceUp"]
 - !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s25LosslessStringConvertibleP", "arc4random"]
 - !private ["s25LosslessStringConvertibleP", "init"]
@@ -224,22 +250,27 @@ depends-member:
 - !private ["SM", "isFaceUp"]
 - !private ["SM", "isFlippedBefore"]
 - !private ["SM", "isMatched"]
+- !private ["SM", "oneAndOnly"]
 - !private ["SM", "remove"]
 - !private ["SM", "subscript"]
 - !private ["Sj", "arc4random"]
 - !private ["Sk", "append"]
 - !private ["Sk", "contains"]
 - !private ["Sk", "count"]
+- !private ["Sk", "filter"]
 - !private ["Sk", "identifier"]
 - !private ["Sk", "indices"]
 - ["Sk", "init"]
 - !private ["Sk", "isFaceUp"]
 - !private ["Sk", "isFlippedBefore"]
 - !private ["Sk", "isMatched"]
+- !private ["Sk", "oneAndOnly"]
 - !private ["Sk", "remove"]
 - !private ["Sk", "subscript"]
 - !private ["Sn", "contains"]
+- !private ["Sn", "filter"]
 - !private ["SX", "contains"]
+- !private ["SX", "filter"]
 - !private ["Sm", "append"]
 - !private ["Sm", "count"]
 - !private ["Sm", "identifier"]
@@ -249,11 +280,15 @@ depends-member:
 - !private ["Sm", "isFaceUp"]
 - !private ["Sm", "isFlippedBefore"]
 - !private ["Sm", "isMatched"]
+- !private ["Sm", "oneAndOnly"]
 - !private ["Sm", "remove"]
 - !private ["Sm", "subscript"]
+- ["ST", "Element"]
 - !private ["ST", "append"]
 - !private ["ST", "contains"]
 - !private ["ST", "count"]
+- !private ["ST", "filter"]
+- !private ["ST", "first"]
 - !private ["ST", "identifier"]
 - !private ["ST", "indices"]
 - ["ST", "init"]
@@ -261,10 +296,12 @@ depends-member:
 - !private ["ST", "isFaceUp"]
 - !private ["ST", "isFlippedBefore"]
 - !private ["ST", "isMatched"]
+- !private ["ST", "oneAndOnly"]
 - !private ["ST", "remove"]
 - !private ["ST", "subscript"]
 - !private ["SZ", "arc4random"]
 - !private ["s13SignedNumericP", "arc4random"]
+- !private ["s5SliceV", "isFaceUp"]
 - !private ["s12StaticStringV", "init"]
 - !private ["s12StaticStringV", "init"]
 - !private ["Sx", "arc4random"]
@@ -285,6 +322,7 @@ depends-member:
 - !private ["s24_DestructorSafeContainerP", "isFaceUp"]
 - !private ["s24_DestructorSafeContainerP", "isFlippedBefore"]
 - !private ["s24_DestructorSafeContainerP", "isMatched"]
+- !private ["s24_DestructorSafeContainerP", "oneAndOnly"]
 - !private ["s24_DestructorSafeContainerP", "remove"]
 - !private ["s24_DestructorSafeContainerP", "subscript"]
 - !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
@@ -304,6 +342,7 @@ depends-member:
 - !private ["s35_HasCustomAnyHashableRepresentationP", "count"]
 - !private ["s35_HasCustomAnyHashableRepresentationP", "indices"]
 - ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "oneAndOnly"]
 - !private ["s35_HasCustomAnyHashableRepresentationP", "remove"]
 - !private ["s35_HasCustomAnyHashableRepresentationP", "subscript"]
 - !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
@@ -313,6 +352,7 @@ depends-member:
 - !private ["s21_ObjectiveCBridgeableP", "indices"]
 - ["s21_ObjectiveCBridgeableP", "init"]
 - !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "oneAndOnly"]
 - !private ["s21_ObjectiveCBridgeableP", "remove"]
 - !private ["s21_ObjectiveCBridgeableP", "subscript"]
 - !private ["s16_SwiftStringViewP", "init"]
@@ -345,6 +385,8 @@ depends-nominal:
 - !private "s17FixedWidthIntegerP"
 - "SH"
 - !private "Si"
+- !private "s22LazyCollectionProtocolP"
+- !private "s20LazySequenceProtocolP"
 - !private "s25LosslessStringConvertibleP"
 - !private "s10MirrorPathP"
 - "SM"
@@ -356,6 +398,7 @@ depends-nominal:
 - "ST"
 - !private "SZ"
 - !private "s13SignedNumericP"
+- !private "s5SliceV"
 - !private "s12StaticStringV"
 - !private "Sx"
 - !private "SS"
@@ -400,4 +443,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.1.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.1.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "860f48550a800bce65c5a31010efc6bc"
+interface-hash: "461d5e07c2a371c0c2f800acf8830d2e"
